@@ -4,23 +4,23 @@ import java.io.Serializable;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
-public class Grad​ implements Serializable {
+public class Grad implements Serializable {
     private String naziv;
     private Integer broj_stanovnika;
     private double []temperature = new double[1000];
 
     private int brMjerenja = 0;
 
-    public Grad​() { }
+    public Grad() { }
 
-    public Grad​(String nazivGrada, int glavniBrojStanovnika, double[] mjerenja, int br) {
+    public Grad(String nazivGrada, int glavniBrojStanovnika, double[] mjerenja, int br) {
         naziv = nazivGrada;
         broj_stanovnika = glavniBrojStanovnika;
         temperature = mjerenja;
         brMjerenja = br;
     }
 
-    public Grad​(String name, double[] mjerenja, int brojac) {
+    public Grad(String name, double[] mjerenja, int brojac) {
         naziv = name;
         broj_stanovnika = 0;
         temperature = mjerenja;
@@ -63,8 +63,7 @@ public class Grad​ implements Serializable {
 
     @Override
     public String toString() {
-        String pokupi = Arrays.stream(temperature, 0, brMjerenja).mapToObj(value -> Double.valueOf(value).toString()).collect(Collectors.joining(", "));
-        return "Grad​{" +
+        return "Grad{" +
                 "naziv='" + naziv + '\'' +
                 ", broj_stanovnika=" + broj_stanovnika +
                 ", temperature=" + Arrays.toString(temperature) +

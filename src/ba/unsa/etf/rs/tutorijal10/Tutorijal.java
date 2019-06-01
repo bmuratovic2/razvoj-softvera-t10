@@ -45,8 +45,8 @@ public class Tutorijal {
 
 
     // Zadatak 1
-    public static ArrayList<Grad​> ucitajGradove(){
-        ArrayList<Grad​> gradovi = new ArrayList<>();
+    public static ArrayList<Grad> ucitajGradove(){
+        ArrayList<Grad> gradovi = new ArrayList<>();
         Scanner tok = null;
 
         try {
@@ -68,14 +68,14 @@ public class Tutorijal {
                 mjerenja[i] = Parser.nextDouble();
 
             }
-            gradovi.add(new Grad​(Name , mjerenja , brojac));
+            gradovi.add(new Grad(Name , mjerenja , brojac));
             brojac = 0;
         }
         return gradovi;
     }
 
     // Zadatak 2 - učitavanje podataka o državama iz datoteke drzave.xml​
-    public static UN ucitajXml(ArrayList<Grad​> gradovi){
+    public static UN ucitajXml(ArrayList<Grad> gradovi){
         Document documentXML = null;
         try {
             DocumentBuilder docReader = DocumentBuilderFactory.newInstance().newDocumentBuilder();
@@ -105,7 +105,7 @@ public class Tutorijal {
                 String jedinicaPovrsine = povrsinaXml.getAttribute("jedinica");
                 double povrsina = Double.parseDouble(drzavaElement.getElementsByTagName("povrsina").item(0).getTextContent());
 
-                Grad​ glavniGrad = new Grad​(nazivGrada, glavniBrojStanovnika, null, 0);
+                Grad glavniGrad = new Grad(nazivGrada, glavniBrojStanovnika, null, 0);
                 drzave.add(new Drzava(naziv, brojStanovnika, povrsina, jedinicaPovrsine, glavniGrad));
             }
         }
